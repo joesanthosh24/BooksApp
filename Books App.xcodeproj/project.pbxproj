@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		670E040F26ACAC590076D0F2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E040E26ACAC580076D0F2 /* Book.swift */; };
 		67DFC26026AA03B20010E3FD /* Books_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DFC25F26AA03B20010E3FD /* Books_AppApp.swift */; };
 		67DFC26226AA03B20010E3FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DFC26126AA03B20010E3FD /* ContentView.swift */; };
 		67DFC26426AA03B20010E3FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DFC26326AA03B20010E3FD /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		670E040E26ACAC580076D0F2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		67DFC25C26AA03B20010E3FD /* Books App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Books App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DFC25F26AA03B20010E3FD /* Books_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books_AppApp.swift; sourceTree = "<group>"; };
 		67DFC26126AA03B20010E3FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +35,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		670E040D26ACAC410076D0F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				670E040E26ACAC580076D0F2 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		67DFC25326AA03B20010E3FD = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +62,7 @@
 		67DFC25E26AA03B20010E3FD /* Books App */ = {
 			isa = PBXGroup;
 			children = (
+				670E040D26ACAC410076D0F2 /* Models */,
 				67DFC25F26AA03B20010E3FD /* Books_AppApp.swift */,
 				67DFC26126AA03B20010E3FD /* ContentView.swift */,
 				67DFC26326AA03B20010E3FD /* Assets.xcassets */,
@@ -140,6 +151,7 @@
 			files = (
 				67DFC26226AA03B20010E3FD /* ContentView.swift in Sources */,
 				67DFC26026AA03B20010E3FD /* Books_AppApp.swift in Sources */,
+				670E040F26ACAC590076D0F2 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
