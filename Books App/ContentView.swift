@@ -11,13 +11,12 @@ struct ContentView: View {
     @State var searchContent: String = ""
     
     var books: [Book] = [
-        Book(title: "Huckleberry Fin", author: "Mark Twain", image: "huck_fin"),
-        Book(title: "Harry Potter and the Sorceror's Stone", author: "J.K. Rowling", image: "harry_sorc"),
-        Book(title: "The Lightning Thief", author: "Rick Riordian", image: "lightning"),
-        Book(title: "The Mamba Mentality, How I Play", author: "Kobe Bryant", image: "mamba"),
-        Book(title: "Ikigai: Japanese Secret to Long and Happy Life", author: "Hector Garcia and Francesc Miralles", image: "ikigai"),
-        Book(title: "The Wizard of Oz", author: "L. Frank Baum", image: "wizard_oz"),
-        Book(title: "Harry Potter and the Sorceror's Stone", author: "J.K. Rowling", image: "harry_sorc")
+        Book(title: "Huckleberry Fin", author: "Mark Twain", image: "huck_fin", stars: 5),
+        Book(title: "Harry Potter and the Sorceror's Stone", author: "J.K. Rowling", image: "harry_sorc", stars: 5),
+        Book(title: "The Lightning Thief", author: "Rick Riordian", image: "lightning", stars: 4),
+        Book(title: "The Mamba Mentality, How I Play", author: "Kobe Bryant", image: "mamba", stars: 5),
+        Book(title: "Ikigai: Japanese Secret to Long and Happy Life", author: "Hector Garcia and Francesc Miralles", image: "ikigai", stars: 3),
+        Book(title: "The Wizard of Oz", author: "L. Frank Baum", image: "wizard_oz", stars: 4)
     ]
     
     var body: some View {
@@ -29,11 +28,20 @@ struct ContentView: View {
                         .padding()
                         .background(Color(.systemGray4))
                         .cornerRadius(5)
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "magnifyingglass")
+                    })
                 }
                 Section {
                     ScrollView {
-                        ForEach(0..<books.count) {
-                            BookView(book: books[$0])
+                        ForEach(0..<books.count) { num in
+                            NavigationLink(
+                                destination: DetailsView(book: books[num]),
+                                label: {
+                                    BookView(book: books[num])
+                                })
                         }
                     }
                 }
@@ -50,34 +58,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct BookView: View {
-    let book: Book
-    
-    var body: some View {
-        HStack {
-            Image("\(book.image)")
-                .resizable()
-                .frame(width: 100, height: 100, alignment: .center)
-            VStack {
-                HStack {
-                    Text((book.title))
-                        .foregroundColor(Color(.label))
-                        .fontWeight(.medium)
-                    Spacer()
-                }
-                HStack {
-                    Text("by \(book.author)")
-                        .foregroundColor(.gray)
-                    Spacer()
-                }
-                Spacer()
-            }
-            .frame(alignment: .leading)
-            Spacer()
-        }
-        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
     }
 }
