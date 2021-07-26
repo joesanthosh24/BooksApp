@@ -41,7 +41,9 @@ struct ContentView: View {
             }
             .padding()
             .navigationBarTitle("Books")
+            .edgesIgnoringSafeArea(.bottom)
         }
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
